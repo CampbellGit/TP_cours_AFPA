@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class exercice10 {
+public class exercice10_obsolete_copie_algobox {
 	
 	public static void main(String[] args) {
 		
