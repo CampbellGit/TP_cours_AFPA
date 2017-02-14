@@ -16,7 +16,7 @@ public class exercice10 {
 		phrase_originelle = sc.nextLine();
 		
 		
-		pointeur = phrase_originelle.substring(compteur, compteur);
+		pointeur = phrase_originelle.substring(compteur, compteur+1);
 		longueur_phrase = phrase_originelle.length();
 		
 		while (compteur<longueur_phrase)
@@ -32,20 +32,20 @@ public class exercice10 {
 			longueur_mot = mot.length();
 		for (remplir=0; remplir<longueur_mot; longueur_mot++)
 			{
-			inversion = inversion+mot.substring(longueur_mot-remplir, 1);
+			inversion = inversion+mot.substring(longueur_mot-remplir, longueur_mot-remplir+1);
 			}
 		phrase_finale = phrase_finale+inversion;
 		
 		phrase_finale = phrase_finale +" ";
 		compteur++;
-		pointeur = phrase_originelle.substring(compteur, 1);
+		pointeur = phrase_originelle.substring(compteur, compteur+1);
 		mot = "";
 		inversion = "";
 		
 		while (pointeur == " ")
 			{
 			compteur++;
-			pointeur = phrase_originelle.substring(compteur, compteur);
+			pointeur = phrase_originelle.substring(compteur, compteur+1);
 			}
 		
 		derniere_lettre = phrase_finale.substring(phrase_finale.length()-1, phrase_finale.length());

@@ -4,7 +4,9 @@ public class test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		    String phrase = "le chat est tres gris";
+		    String phrase = "le    chat    est    tres   gris";
+		    phrase = phrase.replaceAll("\\s+", " ");
+		    
 		    String[] str =phrase.split(" ");
 		    StringBuffer buffer = new StringBuffer();
 		    StringBuilder lettres = new StringBuilder(phrase);
