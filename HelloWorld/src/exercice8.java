@@ -84,7 +84,7 @@ public class exercice8 {
 		DataInputStream entree = new DataInputStream
 								(new FileInputStream (nomfich));
 		
-		System.out.println("Valeurs lues dans le fichier " +nomfich +" : ");
+		System.out.println("Valeurs triée lues dans le fichier " +nomfich +" : ");
 		boolean eof = false; // fin du fichier
 		while (!eof)
 		{

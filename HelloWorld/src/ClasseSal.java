@@ -2,14 +2,14 @@ import java.util.ArrayList;
 
 public class ClasseSal {
 
-	public String matricule;
+	public int matricule;
 	private String nom;
 	private int salaire;
 
 	// ************* ACCESSEURS *************
 
 	// Retourne le matricule
-	public String getMatricule() {
+	public int getMatricule() {
 		return matricule;
 	}
 
@@ -27,7 +27,7 @@ public class ClasseSal {
 	// ************* MUTATEURS *************
 
 	// Définit le matricule
-	public void setMatricule(String _Matricule) {
+	public void setMatricule(int _Matricule) {
 		matricule = _Matricule;
 	}
 	

@@ -20,26 +20,24 @@ public class exercice9 {
 		// variables
 
 		ArrayList<ClasseSal> db = new ArrayList<ClasseSal>();
-		int reponse, salairenew, i ;		
+		int reponse, salairenew, del, matriculenew ;		
 		Scanner sc = new Scanner(System.in);
-		String nomnew, del, nom;
-		String matriculenew;
-		Object pers;
+		String nomnew;
 		
 		ClasseSal m1 = new ClasseSal();
 		m1.setNom("Penelope");
-		m1.setMatricule("1001");
+		m1.setMatricule(1001);
 		m1.setSalaire(3677);
 		db.add(m1);
 		
 		ClasseSal m2 = new ClasseSal();
 		m2.setNom("Michel");
-		m2.setMatricule("1002");
+		m2.setMatricule(1002);
 		m2.setSalaire(1001);
 		db.add(m2);
 		ClasseSal m3 = new ClasseSal();
 		m3.setNom("Kevin");
-		m3.setMatricule("1003");
+		m3.setMatricule(1003);
 		m3.setSalaire(525);
 		db.add(m3);
 		
@@ -76,9 +74,9 @@ public class exercice9 {
 		salairenew = sc.nextInt();
 		newemp.setSalaire(salairenew);
 		
-		System.out.println("Veuillez indiquer le matricule du salarié :");
+		System.out.println("Veuillez indiquer le matricule du salarié (chiffres uniquement) :");
 		sc.nextLine();
-		matriculenew = sc.nextLine();
+		matriculenew = sc.nextInt();
 		newemp.setMatricule(matriculenew);
 
 		db.add(newemp);
@@ -97,10 +95,10 @@ public class exercice9 {
 
 			System.out.println("Veuillez indiquer le matricule du salarié à SUPPRIMER :");
 			sc.nextLine();
-			del = sc.nextLine();
+			del = sc.nextInt();
 			for (ClasseSal classeSal : db)
 				{
-				if (classeSal.matricule.equals(del))
+				if (classeSal.matricule==del)
 				{
 					 db.remove(classeSal);		
 					 break;
@@ -120,9 +118,9 @@ public class exercice9 {
 
 			System.out.println("Veuillez indiquer le matricule du salarié à AFFICHER :");
 			sc.nextLine();
-			del = sc.nextLine();
+			del = sc.nextInt();
 			for (ClasseSal classeSal : db) {
-				if (classeSal.matricule.equals(del))
+				if (classeSal.matricule==del)
 				{
 				System.out.println("Nom : " +classeSal.getNom());
 				System.out.println("Matricule : "+classeSal.getMatricule());
@@ -136,15 +134,17 @@ public class exercice9 {
 
 		if (reponse == 4)
 		{
-			System.out.println("Voici la liste actuelle des salaires :");
+			System.out.println("Voici la liste actuelle des matricules :");
 			//for (i=0; i<db.size(); i++)
 			for (ClasseSal classeSal : db) {				
-				System.out.println(classeSal.getSalaire());
+				System.out.println(classeSal.getMatricule());
 			}
-			System.out.println("Voici la liste en ordre croissant des salaires :");
-			Collections.sort(db,(p1, p2) -> p1.getSalaire()-p2.getSalaire());
+			System.out.println("Voici la liste en ordre croissant des matricules :");
+			Collections.sort(db,(p1, p2) -> p1.getMatricule()-p2.getMatricule());
 			
-	        db.forEach(System.out::println);
+			for (ClasseSal classeSal : db) {				
+				System.out.println(classeSal.getMatricule());
+			}
 
 
 			}
