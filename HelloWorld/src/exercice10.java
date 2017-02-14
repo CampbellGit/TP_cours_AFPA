@@ -1,70 +1,41 @@
+import java.io.*;
 import java.util.Scanner;
+public class test {
 
-public class exercice10 {
-	
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			String phrase;
+
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Veuillez indiquer votre phrase :");
+			phrase = sc.nextLine();
 		
-		// Variables
-		String phrase_finale = null, inversion = null, phrase_originelle, pointeur, mot = null, derniere_lettre;
-		int longueur_mot, compteur=0, remplir, longueur_phrase, remplir2, longueur_finale;
-		Scanner sc = new Scanner(System.in);
-		
-		
-		// Programme
-		
-		System.out.println("Veuillez indiquer votre phrase :");
-		phrase_originelle = sc.nextLine();
-		
-		
-		pointeur = phrase_originelle.substring(compteur, compteur+1);
-		longueur_phrase = phrase_originelle.length();
-		
-		while (compteur<longueur_phrase)
-			while (pointeur!=" " && pointeur!=".")
-				{
-				if (pointeur != ".")
-					{
-					mot = mot+pointeur;
-					compteur++;
-					pointeur = phrase_originelle.substring(compteur, compteur);
-					}
-				}
-			longueur_mot = mot.length();
-		for (remplir=0; remplir<longueur_mot; longueur_mot++)
+			while (phrase.charAt(phrase.length()-1)!='.')
 			{
-			inversion = inversion+mot.substring(longueur_mot-remplir, longueur_mot-remplir+1);
+				System.out.println("On a dit une phrase, il manque un point final, réessayez :");
+				phrase = sc.nextLine();
 			}
-		phrase_finale = phrase_finale+inversion;
-		
-		phrase_finale = phrase_finale +" ";
-		compteur++;
-		pointeur = phrase_originelle.substring(compteur, compteur+1);
-		mot = "";
-		inversion = "";
-		
-		while (pointeur == " ")
-			{
-			compteur++;
-			pointeur = phrase_originelle.substring(compteur, compteur+1);
-			}
-		
-		derniere_lettre = phrase_finale.substring(phrase_finale.length()-1, phrase_finale.length());
-		
-		if (derniere_lettre == " ");
-		{
-			phrase_finale = phrase_finale.substring(0, phrase_finale.length());
-		}
-		if (phrase_finale.substring(0,1)==" ")
-			phrase_finale = phrase_finale.substring(1, phrase_finale.length());
-		
-		phrase_finale = phrase_finale+".";
-		if (phrase_finale.substring(phrase_finale.length()-2,1)==" ")
-		    phrase_finale = phrase_finale.substring(0,phrase_finale.length()-2);
-		    phrase_finale = phrase_finale+".";
+			phrase = phrase.substring(0, phrase.length() - 1);
+		    phrase = phrase.replaceAll("\\s+", " ");
 		    
-			System.out.println(phrase_finale);   
-		
-				
-				
-	}
-}
+		    String[] str =phrase.split(" ");
+		    StringBuffer buffer = new StringBuffer();
+
+		    for(int i=str.length-1;i>=0;i--)
+		    {
+		        buffer.append(str[i]);
+		        buffer.append(" ");
+		    }
+
+
+		    String string=buffer.toString();
+		    String reverse = new StringBuffer(string).reverse().toString();
+		    reverse = reverse.trim();
+		    System.out.println(reverse+".");
+		    
+
+		    }
+		}
+	
+
+
